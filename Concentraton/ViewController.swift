@@ -10,11 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var button: UIButton!
+    
+
+    @IBAction func touchCard(_ sender: UIButton) {
+        
+    flipCard(withEmoji:"👻" , on: button)
     }
-
-
+    
+    func flipCard(withEmoji emoji:String , on button:UIButton){
+       
+        if button.currentTitle == "👻"
+        {
+            button.setTitle(" ", for: UIControl.State.normal)
+            button.backgroundColor = #colorLiteral(red: 1, green: 0.6043807131, blue: 0.1304958344, alpha: 1)
+        }
+        else
+        {
+            button.setTitle("👻", for: UIControl.State.normal)
+            button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+    }
+    
 }
 
