@@ -20,11 +20,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
-
+    // create an array : make proj. data driven
+    
+    //Array of UIButtons
+    @IBOutlet var CardButtons: [UIButton]!
+    
     @IBAction func touchCard(_ sender: UIButton) {
         
-    flipCard(withEmoji:"👻" , on: button)
+    
     flipCount+=1
+        let cardNumber = CardButtons.index(of:sender)
+        print("cardNumber = \(cardNumber)")
+        
     }
     
     func flipCard(withEmoji emoji:String , on button:UIButton){
